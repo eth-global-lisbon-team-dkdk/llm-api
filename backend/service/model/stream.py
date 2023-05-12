@@ -1,6 +1,5 @@
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from service.constants import OPEN_AI_KEY
 from typing import List
 
