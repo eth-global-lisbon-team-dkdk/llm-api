@@ -1,4 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
+from fastapi.responses import StreamingResponse
+from service.llm import LLM
+from typing import List
 
 
 app = FastAPI(
@@ -7,6 +10,8 @@ app = FastAPI(
     version="0.0.1",
 )
 
+llm = LLM()
+
 
 @app.get("/")
 async def root():
@@ -14,5 +19,5 @@ async def root():
 
 
 @app.get("/query")
-async def query():
-    return {"message": "Query the LLM API"}
+async def query(query: str = Query(..., description="Query to ask the LLM")):
+    return llm.main(query)
