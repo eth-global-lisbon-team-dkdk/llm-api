@@ -3,3 +3,6 @@ service/constants.py
 
 #adhoc
 adhoc.py
+
+# all pycache files
+*.py[co]
