@@ -48,12 +48,6 @@ async def query(request: Request, query_request: QueryRequest):
     return llm.main(query)
 
 
-# @app.post("/query")
-# async def query(request: Request, query_request: QueryRequest):
-#     query = query_request.query
-#     return StreamingResponse(llm.main(query))
-
-
 @app.post("/example")
 async def query(request: Request, query_request: QueryRequest):
     query = query_request.query

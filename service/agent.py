@@ -18,7 +18,7 @@ class Agent:
         llm = ChatOpenAI(
             temperature=0,
             openai_api_key=OPEN_AI_KEY,
-            streaming=False,
+            streaming=True,
             callbacks=[StreamingStdOutCallbackHandler()],
             model_name="gpt-4",
         )
