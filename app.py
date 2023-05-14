@@ -1,15 +1,11 @@
-from fastapi import FastAPI, Query, Request
+from fastapi import FastAPI, Request
 from pydantic import BaseModel
 from service.llm import LLM
 from service.mock_llm import MockLLM
 from pathlib import Path
-import time
-from fastapi.responses import StreamingResponse
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
 from modal import Image, Stub, asgi_app, Mount
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
 
 static_path = Path(__file__).with_name("service").resolve()
 
@@ -26,7 +22,7 @@ app = FastAPI(
     description="LLM API for the Ethglobal Hackathon",
     version="0.0.1",
 )
-stub = Stub("llm-api")
+stub = Stub("llm-api-v2")
 image = Image.debian_slim().pip_install("boto3", "langchain", "requests", "openai")
 
 # Middleware for CORS
