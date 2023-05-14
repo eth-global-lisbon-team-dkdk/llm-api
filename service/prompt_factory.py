@@ -4,7 +4,7 @@ from service.prompt_container import PromptContainer
 class PromptFactory:
     def __init__(self, is_cloud_runtime=False):
         self.prompts = {
-            "intro": PromptContainer(is_cloud_runtime).intro_prompt,
+            "regular": PromptContainer(is_cloud_runtime).intro_prompt,
             "wallet_connect": PromptContainer(is_cloud_runtime).wallet_connect_prompt,
         }
 
