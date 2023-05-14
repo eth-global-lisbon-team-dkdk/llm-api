@@ -22,4 +22,4 @@ class StreamingChatResponse:
         return self.chat(messages)
 
     def __call__(self, human_message: HumanMessage):
-        return self.chat([HumanMessage(content=human_message)])
+        return self.chat.run([HumanMessage(content=human_message)])
