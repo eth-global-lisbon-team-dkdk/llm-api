@@ -23,8 +23,7 @@ class Agent:
             model_name="gpt-4",
         )
         self.prompt_factory = PromptFactory()
-
-        memory = ConversationBufferMemory(memory_key="chat_history")
+        self.memory = ConversationBufferMemory(memory_key="chat_history")
 
         class CoinPrice(BaseModel):
             address: str = Field(..., description="The coin name to search for.")
@@ -34,9 +33,6 @@ class Agent:
                 ...,
                 description="The swap key to use to swap token + amount. E.g. to swap $10 of ETH for 'AAVE', swap_key = 'AAVE_10",
             )
-            # swap_amount_usd: float = Field(
-            #     ..., description="The amount (USD) to swap/buy."
-            # )
 
         tools = [
             Tool(

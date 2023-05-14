@@ -6,3 +6,4 @@ adhoc.py
 
 # all pycache files
 *.py[co]
+service/model/__pycache__/

@@ -1,3 +1,6 @@
+import json
+
+
 class SwapFormatter:
     def __init__(self, matic_price_usd: float):
         self.matic_price_usd = matic_price_usd
@@ -22,11 +25,13 @@ class SwapFormatter:
         amount = float(amount)
         swap_address = self.map_swap_symbol_to_address(symbol)
         swap_amount_matic = round(float(amount / self.matic_price_usd), 2)
-        return {
-            "address": swap_address,
-            "amount_matic": swap_amount_matic,
-            "symbol": symbol,
-            "is_action": True,
-            "action_type": "swap",
-            "links": [],
-        }
+        return json.dumps(
+            {
+                "address": swap_address,
+                "amount_matic": swap_amount_matic,
+                "symbol": symbol,
+                "is_action": True,
+                "action_type": "swap",
+                "links": [],
+            }
+        )
