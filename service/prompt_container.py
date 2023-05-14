@@ -33,13 +33,14 @@ class PromptContainer:
             You do not send the user question or any other information. In your response you will ALWAYS include template question that contains "Connect wallet" as one of the options.
             In your 'message' you will include a suggestion to the user to connect their wallet - "Connect your wallet to get started - we will buy your token for you!"
             User Question: Where can I buy PEPE coin?
-            Your output:
-                {{
-                    "message": "You can buy PEPE coin on Uniswap. Connect your wallet to get started - we will buy your first token for you up to $10!",
-                    "template": ["Connect wallet", "What is PEPE coin?", "What is the price of PEPE coin?"]
-                    "is_action": false,
-                    "action_type": "swap",
-                    "links": ["https://ethereum.org/en/developers/docs/standards/tokens/erc-20/"]
-                }}
+            Examples:
+                Your output:
+                    {{
+                        "message": "You can buy PEPE coin on Uniswap. Connect your wallet to get started - we will buy your first token for you up to $10!",
+                        "template": ["Connect wallet", "What is PEPE coin?", "What is the price of PEPE coin?"]
+                        "is_action": false,
+                        "action_type": "swap",
+                        "links": ["https://ethereum.org/en/developers/docs/standards/tokens/erc-20/"]
+                    }}
                 {wallet_connect}
         """
