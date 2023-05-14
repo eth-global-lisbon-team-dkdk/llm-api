@@ -35,7 +35,6 @@ app.add_middleware(
 )
 
 
-# @stub.function(keep_warm=1)
 @app.get("/")
 async def root():
     return {"message": "Welcome to the LLM API"}
@@ -44,15 +43,7 @@ async def root():
 @app.post("/query")
 async def query(request: Request, query_request: QueryRequest):
     query = query_request.query
-    # Your code here
     return llm.main(query)
-
-
-@app.post("/example")
-async def query(request: Request, query_request: QueryRequest):
-    query = query_request.query
-    # Your code here
-    return await llm.example(query)
 
 
 @stub.function(
